@@ -1,0 +1,133 @@
+/* Main styles */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+:root {
+  --border-color: #778;
+  --background-color: #fcfcfc;
+  --white-color: #fff;
+  --border-color: #dfdfdf;
+  --title-color: #4a4a4a;
+  --name-color: #424c53;
+  --text-color: #b6b9bb;
+}
+
+/* General */
+* {
+  box-sizing: content-box;
+}
+
+body {
+  font-family: 'Sen', 'Open Sans', sans-serif;
+  position: relative;
+  background-color: var(--background-color);
+}
+
+h1 {
+  margin: 2em 10%;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--title-color);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  margin: 0 4%;
+}
+
+.card {
+  place-self: center;
+  background-color: var(--white-color);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2em;
+  margin: 1em 1em;
+  width: 16em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.text-container {
+  margin-left: 15px;
+  line-height: 20px;
+}
+
+.name {
+  margin: 0;
+  font-size: 14px;
+  color: var(--name-color);
+}
+
+.email,
+.address {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 13px;
+}
+
+/* Modal window */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(100, 100, 100, 0.4);
+}
+
+.modal {
+  width: 375px;
+  margin: 15% auto auto;
+  position: relative;
+  text-align: center;
+  background: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 30px 20px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 5%;
+  }
+
+  h1 {
+    text-align: left;
+    margin-top: 2.5em;
+    margin-left: 7%;
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    padding: 1em;
+    margin: 0.5em 0.5em;
+  }
+}
